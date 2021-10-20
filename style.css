@@ -13,11 +13,11 @@ h1{
 }
 
 .quadro{
-    background-color: rgb(102, 13, 25);
+    background-color: rgb(112, 91, 182);
     position: absolute;
     width: 700px;
     height: 600px;
-    border: 3px solid blueviolet;
+    border: 3px solid rgb(245, 245, 245);
     margin: 20px auto;
     top: 50%;
     left: 50%;
