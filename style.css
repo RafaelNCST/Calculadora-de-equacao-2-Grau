@@ -1,0 +1,72 @@
+body{
+    background-color: rgb(37, 37, 37);
+}
+
+h1{
+    text-align: center; 
+}
+
+.cadvaria{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+
+.quadro{
+    background-color: rgb(102, 13, 25);
+    position: absolute;
+    width: 700px;
+    height: 600px;
+    border: 3px solid blueviolet;
+    margin: 20px auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn{
+    text-align: center; 
+    padding: 30px;   
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.botao{
+    background-color: green;
+    text-align: center; 
+    font-family: Verdana;
+    width: 100px;
+    height: 30px;
+    border: black solid 1px;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.botao:hover{
+    background-color: greenyellow;
+    transition: 1s;
+}
+
+.resultado{
+    background-color: white;
+    position: absolute;
+    border: 2px black solid;
+    height: 300px;
+    width: 500px;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: fantasy;
+    font-size: larger;
+    font-weight: 500;
+    font-style: oblique;
+    padding-top: 10%;
+}
+
+.valor{
+    text-align: center;
+}
