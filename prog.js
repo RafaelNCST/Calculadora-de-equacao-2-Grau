@@ -1,7 +1,7 @@
 /*
 Nome: Rafael Nascimento Colares
-Objetivo do código: Calcular equações de segundo grau completas e imcompletas, mostrando a função a ser calculada
-além do resultado se for 0.
+Objetivo do código: Calcular equações de segundo grau completas e imcompletas, mostrando a função a ser 
+calculada além do resultado se for 0.
 */
 
 
@@ -73,4 +73,3 @@ function incompletac(a,c){
       resultado.innerHTML += `<br>Primeiro X: ${-(Math.sqrt(deltac))} e Segundo X: ${Math.sqrt(deltac)}<br>`;
   }
 }
-     //chamar função
