@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/style.css"/>
+</head>
+<body>
+    <header class="header">
+        <div class="container-menu">
+            <div class="menu">
+
+                <div class="container-imagem-menu">
+                    <img id="imagem-menu" src="./public/images/menu.png"/>
+                </div>
+                
+                <div class="choose-menu choose-menu1">
+                    <img  id="imgcalculator" src="./public/images/calculatorWhite.png" />
+                </div>
+
+                <div class="choose-menu choose-menu2">
+                    <img  id="imgformula" src="./public/images/formulaWhite.png" />
+                </div>
+
+            </div>
+        </div>
+        <div id="warning"> maximum of 15 digits </div>
+        <div class="container-clarity">
+
+            <div class="change-clarity"> 
+                <div class="change moon"> <img src="./public/images/night-mode.png" /> </div> 
+                <div class="change sun"> <img src="./public/images/brightness.png" /> </div> 
+            </div>
+            <div class="container-span-developer">
+                <span> © 2022 | Developed by Rafael NC </span>
+            </div>
+
+        </div>
+    </header>
+    <div class="calculadora">
+        <div id="visor">
+            <span id="resultCalc"></span>
+            <button class="apagar" data-number="limpar"> Limpar </button>
+        </div>
+        <div class="calculadora-teclas">
+            <button class="button" data-number="9"> 9 </button>
+            <button class="button" data-number="8"> 8 </button>
+            <button class="button" data-number="7"> 7 </button>
+            <button class="button" data-number="+"> + </button>
+            <button class="button" data-number="6"> 6 </button>
+            <button class="button" data-number="5"> 5 </button>
+            <button class="button" data-number="4"> 4 </button>
+            <button class="button" data-number="-"> - </button>
+            <button class="button" data-number="3"> 3 </button>
+            <button class="button" data-number="2"> 2 </button>
+            <button class="button" data-number="1"> 1 </button>
+            <button class="button" data-number="x"> x </button>
+            <button class="button border-left" data-number="0"> 0 </button>
+            <button class="button" data-number="."> . </button>
+            <button class="equals"> = </button>
+            <button class="button border-right" data-number="÷"> ÷ </button>
+        </div>
+    </div>
+    <script type="text/javascript" src="./public/js/funcoes.js"></script>
+    <script type="text/javascript" src="./public/js/calculadora.js"></script>
+</body>
+</html>

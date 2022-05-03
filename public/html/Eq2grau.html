@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/eq2grau.css"/>
+</head>
+<body>
+    <header class="header">
+        <div class="container-menu">
+            <div class="menu">
+
+                <div class="container-imagem-menu">
+                    <img id="imagem-menu" src="../images/menu.png"/>
+                </div>
+                
+                <div class="choose-menu choose-menu1">
+                    <img  id="imgcalculatoreq2" src="../images/calculatorWhite.png" />
+                </div>
+
+                <div class="choose-menu choose-menu2">
+                    <img  id="imgformulaeq2" src="../images/formulaWhite.png" />
+                </div>
+
+            </div>
+        </div>
+        <div class="container-clarity">
+
+            <div class="change-clarity"> 
+                <div class="change mooneq2"> <img src="../images/night-mode.png" /> </div> 
+                <div class="change suneq2"> <img src="../images/brightness.png" /> </div> 
+            </div>
+            <div class="container-span-developer">
+                <span> © 2022 | Developed by Rafael NC </span>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="calculadora">
+        <div id="visoreq2grau">
+            <div class="inputs">
+                <input class="input a" /> <span>x²</span>
+                <input class="input b" data-number="b" /> <span>x</span>
+                <input class="input c" data-number="c" /> 
+            </div>
+        </div>
+        <div class="container-result">
+            <button id="calcular"> Calcular </button>
+            <span id="result" placeholder="Result Here" disabled=""></span>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/funcoeseq2.js"></script>
+    <script type="text/javascript" src="../js/eq2grau.js"></script>
+</body>
+</html>
