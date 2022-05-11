@@ -1,6 +1,6 @@
-"use strict";
 const result = document.getElementById("result");
-document.getElementById("calcular").addEventListener("click", () => {
+
+document.getElementById("calculate").addEventListener("click", () => {
     result.innerHTML = "";
     result.style.color = "";
     let a = document.querySelector(".a").value;
@@ -12,17 +12,18 @@ document.getElementById("calcular").addEventListener("click", () => {
     }
     else {
         if (+b != 0 && +c != 0) {
-            completa(a, b, c);
+            complete(a, b, c);
         }
         else if (+b === 0) {
-            incompletac(a, c);
+            incompleteb(a, c);
         }
         else if (+c === 0) {
-            incompletab(a, b);
+            incompletec(a, b);
         }
     }
 });
-const completa = (a, b, c) => {
+
+const complete = (a, b, c) => {
     let delta = ((+b) ** 2) + (-4 * (+a * +c));
     result.innerHTML += `Resultado do delta: ${delta}`;
     if (delta < 0) {
@@ -34,7 +35,8 @@ const completa = (a, b, c) => {
         result.innerHTML += `<br>Primeiro X: ${bhask1.toFixed(4)}<br> Segundo X: ${bhask2.toFixed(4)}`;
     }
 };
-const incompletab = (a, b) => {
+
+const incompleteb = (a, b) => {
     let deltab = -(+b / +a);
     if (deltab < 0) {
         result.innerHTML += 'Raiz quadrada de Negativo não existe';
@@ -44,7 +46,8 @@ const incompletab = (a, b) => {
         result.innerHTML += `<br>Primeiro X: ${0}<br> Segundo X: ${deltab.toFixed(4)}`;
     }
 };
-const incompletac = (a, c) => {
+
+const incompletec = (a, c) => {
     let deltac = (-(+c) / +a);
     if (deltac < 0) {
         result.innerHTML += 'Raiz quadrada de Negativo não existe';

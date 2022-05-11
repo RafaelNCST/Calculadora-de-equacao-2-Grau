@@ -1,61 +1,68 @@
-"use strict";
-let resultCalc = document.getElementById("resultCalc");
+let Display = document.getElementById("Display");
 let operation = "", numberOne = "", currentnumber = "", numberTwo = "";
-document.querySelectorAll(".button").forEach((e) => {
-    e.addEventListener("click", () => getButton(e));
-});
-const getButton = (e) => {
-    let clickedItem = e.dataset.number;
-    if (resultCalc.innerHTML.length >= 15) {
+
+const viewKeyOnClick = (e) => {
+    clickedItem = e.dataset.number;
+    if (Display.innerHTML.length >= 15){
         let showWindow = document.getElementById("warning");
         showWindow.style.opacity = "1";
         setTimeout(hiddenWarning, 4000);
     }
-    else {
-        if (!!+clickedItem || clickedItem === "0" || clickedItem === ".") {
-            currentnumber += clickedItem;
-            numberTwo += clickedItem;
-            resultCalc.innerHTML += clickedItem;
-        }
-        else {
-            if (operation.length >= 1) {
-                return;
-            }
-            else {
-                operation += clickedItem;
-                numberOne += currentnumber;
-                numberTwo = "";
-                resultCalc.innerHTML += operation;
-            }
-        }
+    else{
+        currentnumber += clickedItem;
+        numberTwo += clickedItem;
+        Display.innerHTML += clickedItem;
     }
-};
+}
+
+const viewOperationOnClick = (e) => {
+    clickedItem = e.dataset.number;
+    if(operation.length > 1){
+        return;
+    }else{
+        operation += clickedItem;
+        numberOne += currentnumber;
+        numberTwo = "";
+        Display.innerHTML += operation;
+    }
+}
+
+
+document.querySelectorAll(".operation").forEach((e) => {
+    e.addEventListener("click", () => viewOperationOnClick(e))
+})
+
+document.querySelectorAll(".tecla").forEach((e) => {
+    e.addEventListener("click", () => viewKeyOnClick(e));
+});
+
+
 document.querySelector(".equals").addEventListener("click", () => {
     let firstNumber = parseFloat(numberOne);
     let secondNumber = parseFloat(numberTwo);
     switch (operation) {
         case "+":
             currentnumber = (firstNumber + secondNumber).toString();
-            resultCalc.innerHTML = currentnumber;
+            Display.innerHTML = currentnumber;
             break;
         case "-":
             currentnumber = (firstNumber - secondNumber).toString();
-            resultCalc.innerHTML = currentnumber;
+            Display.innerHTML = currentnumber;
             break;
         case "x":
             currentnumber = (firstNumber * secondNumber).toString();
-            resultCalc.innerHTML = currentnumber;
+            Display.innerHTML = currentnumber;
             break;
         case "÷":
             if (firstNumber === 0) {
-                resultCalc.innerHTML = "Não é um numero";
+                Display.innerHTML = "Ai não brow";
             }
             else if (secondNumber === 0) {
-                resultCalc.innerHTML = "Ao infinito e além";
+                Display.innerHTML = "Ao infinito e além";
             }
             else {
                 currentnumber = (firstNumber / secondNumber).toString();
-                resultCalc.innerHTML = currentnumber;
+                Display.innerHTML = currentnumber;
             }
             break;
         default:
@@ -64,13 +71,15 @@ document.querySelector(".equals").addEventListener("click", () => {
     numberOne = "";
     operation = "";
 });
-document.querySelector(".apagar").addEventListener("click", () => {
-    resultCalc.innerHTML = "";
+
+document.querySelector(".clear").addEventListener("click", () => {
+    Display.innerHTML = "";
     currentnumber = "";
     operation = "";
     numberOne = "";
     numberTwo = "";
 });
+
 const hiddenWarning = () => {
     document.getElementById("warning").style.opacity = "0";
 };

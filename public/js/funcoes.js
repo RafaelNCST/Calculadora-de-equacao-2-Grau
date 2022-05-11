@@ -1,25 +1,46 @@
-"use strict";
 let calculatorImg = document.getElementById("imgcalculator");
 let formulaImg = document.getElementById("imgformula");
 const menu = document.querySelector(".menu");
-const sunChange = () => {
-    document.body.style.setProperty("--primary-color", "rgba(236,199,154,1)");
-    document.body.style.setProperty("--color-words", "black");
-    document.body.style.setProperty("--border-items", "1px solid rgb(156, 144, 128)");
-    document.body.style.setProperty("--bg-hover", "rgb(199, 184, 165)");
-    calculatorImg.setAttribute("src", "./public/images/calculator.png");
-    formulaImg.setAttribute("src", "./public/images/formula.png");
+
+const getStyleChange = (element, style) => {
+    document.body.style.setProperty(element, style)
+}
+
+const changeImagePerMode = {
+    changePerSun: () => {
+        calculatorImg.setAttribute("src", "./public/images/calculator.png");
+        formulaImg.setAttribute("src", "./public/images/formula.png");
+    },
+    changePerMoon: () => {
+        calculatorImg.setAttribute("src", "./public/images/calculatorWhite.png");
+        formulaImg.setAttribute("src", "./public/images/formulaWhite.png");
+    },
+}
+
+//Modo noturno e modo day;
+const sunButton = () => {
+    getStyleChange("--primary-color", "rgba(236,199,154,1)");
+    getStyleChange("--color-words", "black");
+    getStyleChange("--border-items", "1px solid rgb(156, 144, 128)");
+    getStyleChange("--bg-hover", "rgb(199, 184, 165)");
+    getStyleChange("--bg-input", "rgb(218, 207, 189)");
+    changeImagePerMode.changePerSun()
 };
-const moonChange = () => {
-    document.body.style.setProperty("--primary-color", "rgb(30, 28, 39)");
-    document.body.style.setProperty("--color-words", "white");
-    document.body.style.setProperty("--border-items", "1px solid rgb(66, 61, 87)");
-    document.body.style.setProperty("--bg-hover", "rgb(63, 60, 75)");
-    calculatorImg.setAttribute("src", "./public/images/calculatorWhite.png");
-    formulaImg.setAttribute("src", "./public/images/formulaWhite.png");
+
+const moonButton = () => {
+    getStyleChange("--primary-color", "rgb(30, 28, 39)");
+    getStyleChange("--color-words", "white");
+    getStyleChange("--border-items", "1px solid rgb(66, 61, 87)");
+    getStyleChange("--bg-hover", "rgb(63, 60, 75)");
+    getStyleChange("--bg-input", "rgb(98, 93, 121)");
+    changeImagePerMode.changePerMoon()
 };
-document.querySelector(".sun").addEventListener("click", sunChange);
-document.querySelector(".moon").addEventListener("click", moonChange);
+
+document.querySelector(".sun").addEventListener("click", sunButton);
+document.querySelector(".moon").addEventListener("click", moonButton);
+
+
+//Escolher menu
 menu.addEventListener("click", () => {
     const chooseMenu = document.querySelectorAll(".choose-menu");
     if (menu.clientHeight === 24) {
@@ -43,9 +64,11 @@ menu.addEventListener("click", () => {
         }
     }
 });
+
 document.querySelector(".choose-menu1").addEventListener("click", () => {
-    window.location.replace("/Calculadora.html");
+    window.location.replace("/index.html");
 });
+
 document.querySelector(".choose-menu2").addEventListener("click", () => {
-    window.location.replace("/public/html/Eq2grau.html");
+    window.location.replace("Eq2grau.html");
 });
